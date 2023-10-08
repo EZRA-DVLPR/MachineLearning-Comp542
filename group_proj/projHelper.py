@@ -44,3 +44,19 @@ def getMaxMin(folder):
             minHeight = img.size
 
     return maxWidth, minWidth, maxHeight, minHeight
+
+#returns names of all images that match the given dimensions from a folder
+def imgSizeMatch(imgSize, folder):
+
+    matchingImgs = []
+
+    onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
+
+    for filename in onlyfiles:
+        with Image.open(folder + filename) as img:
+            width, height = img.size
+
+        if width == imgSize[0] and height == imgSize[1]:
+            matchingImgs.append(filename)
+
+    return matchingImgs
