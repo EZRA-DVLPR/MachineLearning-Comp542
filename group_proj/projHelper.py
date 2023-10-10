@@ -1,8 +1,10 @@
 #helper for the project jupyter notebook
 
 from PIL import Image
+import numpy as np
 from os import listdir
 from os.path import isfile, join
+from keras.preprocessing.image import load_img, img_to_array
 
 #given a filepath to a folder of images 
 #returns maxWidth, minWidth, maxHeight, minHeight
@@ -60,3 +62,26 @@ def imgSizeMatch(imgSize, folder):
             matchingImgs.append(filename)
 
     return matchingImgs
+
+#iterate through each animal folder and obtain size stats
+#returns the max/min Width/Height overall
+def calculateExtremeSizes():
+    catSizes = getMaxMin("animals/cats/")
+    dogSizes = getMaxMin("animals/dogs/")
+    pandaSizes = getMaxMin("animals/panda/")
+
+    return [max(catSizes[0], dogSizes[0], pandaSizes[0]), 
+                max(catSizes[1], dogSizes[1], pandaSizes[1]), 
+                max(catSizes[2], dogSizes[2], pandaSizes[2]), 
+                max(catSizes[3], dogSizes[3], pandaSizes[3])]
+
+#returns an array containing the image as an array for all images within the given folder
+def getArrays(folder):
+    arrayHolder = []
+    onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
+    for f in onlyfiles:
+        img = load_img(folder + f)
+        img = img.resize([500,500])
+        array = img_to_array(img)
+        arrayHolder.append(array.flatten())
+    return arrayHolder
