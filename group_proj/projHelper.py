@@ -85,3 +85,26 @@ def getArrays(folder):
         array = img_to_array(img)
         arrayHolder.append(array.flatten())
     return arrayHolder
+
+#gets avg dimensions of all animal folders
+def avgDims():
+    allFolders = ["animals/cats/", "animals/dogs/", "animals/panda/"]
+
+    allWidth = 0
+    allHeight = 0
+
+    for i in range(0,len(allFolders)):
+        folder = allFolders[i]
+
+        onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
+
+        #iteratively calculate dim of all images
+        for filename in onlyfiles:
+            with Image.open(folder + filename) as img:
+                width, height = img.size
+
+            #calculate total
+            allWidth += width
+            allHeight += height
+
+    return (allWidth / 3000), (allHeight / 3000)
