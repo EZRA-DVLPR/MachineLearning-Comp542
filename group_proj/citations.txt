@@ -1,0 +1,8 @@
+Possible Papers - Isaiah:
+S. Marianingsih and F. Utaminingrum, "Comparison of Support Vector Machine Classifier and Naïve Bayes Classifier on Road Surface Type Classification," 2018 International Conference on Sustainable Information Engineering and Technology (SIET), Malang, Indonesia, 2018, pp. 48-53, doi: 10.1109/SIET.2018.8693113.
+G. Karthick and R. Harikumar, "Comparative performance analysis of Naive Bayes and SVM classifier for oral X-ray images," 2017 4th International Conference on Electronics and Communication Systems (ICECS), Coimbatore, India, 2017, pp. 88-92, doi: 10.1109/ECS.2017.8067843.
+G. Chen, Q. Chen, X. Zhu, Y. Chen and Z. Yuan, "Tensor Network for Image Classification," 2020 8th International Conference on Digital Home (ICDH), Dalian, China, 2020, pp. 135-140, doi: 10.1109/ICDH51081.2020.00031.
+L. Zhang, Z. Chen, J. Wang and Z. Huang, "Rocket Image Classification Based on Deep Convolutional Neural Network," 2018 10th International Conference on Communications, Circuits and Systems (ICCCAS), Chengdu, China, 2018, pp. 383-386, doi: 10.1109/ICCCAS.2018.8769176.
+A. C. Salgado-Albiter, S. I. Valdez and J. Paredes-Tavares, "Improving Geomorphological Classification via Binary Image Processing," 2022 IEEE Mexican International Conference on Computer Science (ENC), Xalapa, Veracruz, Mexico, 2022, pp. 1-7, doi: 10.1109/ENC56672.2022.9882949.
+
+Possible Papers - Joycelyn:
