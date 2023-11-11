@@ -1,7 +1,6 @@
 #helper for the project jupyter notebook
 
 from PIL import Image
-import numpy as np
 from os import listdir
 from os.path import isfile, join
 from keras.preprocessing.image import load_img, img_to_array
