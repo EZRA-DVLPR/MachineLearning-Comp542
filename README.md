@@ -10,11 +10,11 @@ A single document discussing the differences between the various Disciplines of 
 
 ## assignment2
 
-A short assignment to learn the basics of ML with the well-known iris dataset from UCI
+A short assignment to learn the basics of ML with the well-known iris dataset from UCI.
 
 ## assignment2
 
-A short assignment to use linear SVM and kernel RBF SVM Classifier on MNIST dataset
+A short assignment to use linear SVM and kernel RBF SVM Classifier on MNIST dataset.
 
 ## group_proj
 
