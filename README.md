@@ -19,4 +19,5 @@ A short assignment to use linear SVM and kernel RBF SVM Classifier on MNIST data
 ## group_proj
 
 A group project where me and my groupmate are working on the same dataset and problem, but are working with different algorithms.
-Together we are doing a Binary Image Classification on Cats vs Dogs & Pandas
+Isaiah will work with SVM and Joycelyn will work with CNN.
+Together we are doing a Binary Image Classification on Cats vs Dogs & Pandas.
