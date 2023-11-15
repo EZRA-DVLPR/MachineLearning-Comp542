@@ -117,3 +117,5 @@ def avgDims(folder):
     
     #calculate avg
     return (allWidth / numImages), (allHeight / numImages)
+
+# CODE GOES HERE
