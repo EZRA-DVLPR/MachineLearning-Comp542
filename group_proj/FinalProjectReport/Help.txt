@@ -1,0 +1,10 @@
+Sample Text:
+
+
+Will put a link to guide's below:
+
+1) https://typeset.io/resources/learn-latex-beginners-step-by-step-guide/
+2) https://www.overleaf.com/learn/latex/Tutorials#Overleaf_LaTeX_tutorials
+3) https://latex-tutorial.com/
+4) https://www.youtube.com/watch?v=oSigbWpcoI8
+5) https://www.youtube.com/watch?v=VhmkLrOjLsw
