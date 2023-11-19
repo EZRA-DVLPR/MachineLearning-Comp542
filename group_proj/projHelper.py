@@ -63,7 +63,6 @@ def imgSizeMatch(imgSize, folder):
 
     return matchingImgs
 
-
 #Input: filepath to a folder containing images
 #Output: [maxWidth, minWidth, maxHeight, MinHeight] of all 3 subfolders (`cats`, `dogs`, and `panda`)
 def calculateExtremeSizes(folder):
@@ -76,18 +75,18 @@ def calculateExtremeSizes(folder):
                 max(catSizes[2], dogSizes[2], pandaSizes[2]), 
                 min(catSizes[3], dogSizes[3], pandaSizes[3])]
 
-#Input: filepath to a folder containing images
+#Input: filepath to a folder containing images (Must end with '/' character)
 #Output: array containing the images as arrays for all images within the given folder
 #           the images given will be reshaped to dimesnsion size (500,500) before being converted into an array
 #           eg. [[...IMG1...], [...IMG2...], ...]
-def getArrays(folder):
+def getResizedFlattenedArrays(folder):
     arrayHolder = []
     onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
     for f in onlyfiles:
         img = load_img(folder + f)
         img = img.resize([500,500])
-        array = img_to_array(img)
-        arrayHolder.append(array.flatten())
+        imgarray = img_to_array(img)
+        arrayHolder.append(imgarray.flatten())
     return arrayHolder
 
 #Input: filepath to a folder containing images
