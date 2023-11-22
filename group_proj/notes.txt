@@ -1,0 +1,8 @@
+each image converted to 500 x 500 px
+=> 250000 features, but each was an rgb image
+=> 250000 * 3
+=> 750000 features from each image
+=> 750001 features when adding class
+
+2952 images total =>
+dataset has 2952 rows and 750001 cols
