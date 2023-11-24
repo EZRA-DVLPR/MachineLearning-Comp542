@@ -120,7 +120,17 @@ def avgDims(folder):
     #calculate avg
     return (allWidth / numImages), (allHeight / numImages)
 
-# CODE GOES HERE
-
 #might want to add images that are modified into a folder to be obtained easily
 # basically the same as getResizedGrayscaleFlattenedArrays, but save to a new folder
+def saveModifiedImages(inFolder, outFolder):
+    onlyfiles = [f for f in listdir(inFolder) if isfile(join(inFolder, f))]
+    for f in onlyfiles:
+        img = load_img(inFolder + f)
+        img = img.convert('L')
+        img = img.resize([500,500])
+        imgarray = img_to_array(img)
+        imgarray = imgarray.flatten()
+        img.save(outFolder + f)
+    return
+
+# CODE GOES HERE
