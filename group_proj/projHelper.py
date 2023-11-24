@@ -1,5 +1,7 @@
 #helper for the project jupyter notebook
 
+import numpy as np
+
 from PIL import Image
 from os import listdir
 from os.path import isfile, join
@@ -77,13 +79,14 @@ def calculateExtremeSizes(folder):
 
 #Input: filepath to a folder containing images (Must end with '/' character)
 #Output: array containing the images as arrays for all images within the given folder
-#           the images given will be reshaped to dimesnsion size (500,500) before being converted into an array
+#           grayscale => resized => image array
 #           eg. [[...IMG1...], [...IMG2...], ...]
-def getResizedFlattenedArrays(folder):
+def getResizedGrayscaleFlattenedArrays(folder):
     arrayHolder = []
     onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
     for f in onlyfiles:
         img = load_img(folder + f)
+        img = img.convert('L')
         img = img.resize([500,500])
         imgarray = img_to_array(img)
         arrayHolder.append(imgarray.flatten())
@@ -116,5 +119,18 @@ def avgDims(folder):
     
     #calculate avg
     return (allWidth / numImages), (allHeight / numImages)
+
+#might want to add images that are modified into a folder to be obtained easily
+# basically the same as getResizedGrayscaleFlattenedArrays, but save to a new folder
+def saveModifiedImages(inFolder, outFolder):
+    onlyfiles = [f for f in listdir(inFolder) if isfile(join(inFolder, f))]
+    for f in onlyfiles:
+        img = load_img(inFolder + f)
+        img = img.convert('L')
+        img = img.resize([500,500])
+        imgarray = img_to_array(img)
+        imgarray = imgarray.flatten()
+        img.save(outFolder + f)
+    return
 
 # CODE GOES HERE
