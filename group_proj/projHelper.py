@@ -1,5 +1,8 @@
 #helper for the project jupyter notebook
 
+import torch
+import clip
+import numpy as np
 from PIL import Image
 from os import listdir
 from os.path import isfile, join
@@ -132,3 +135,52 @@ def saveModifiedImages(inFolder, outFolder):
     return
 
 # CODE GOES HERE
+
+def getCMProbs(modelNum, files, cm, actualAnimal):
+    #actualAnimal == 0 => cat
+    #          1 => dog
+    #          2 => panda
+
+    animals = ['cat', 'dog', 'panda']
+    probabilities = []
+
+    for i in range(2):#len(files)):
+
+        #get image
+        img = files[i]
+
+        #prepare model
+        if modelNum == 0:
+            modelName = 'ViT-B/32'
+        else:
+            modelName = "RN50x16"
+
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        model, preprocess = clip.load(modelName, device = device)
+
+        #preprocess img and move to device
+        img = preprocess(Image.open(img)).unsqueeze(0).to(device)
+
+        #tokenize animal categories for prediction
+        text = clip.tokenize(animals).to(device)
+
+        #make prediction purely on the Number of Logits per Image
+        with torch.no_grad():
+            logitsPerImg, _ = model(img, text)
+            probs = np.array(logitsPerImg.softmax(dim = -1).cpu().numpy())
+
+        #get the class with the highest probability (predicted label)
+        label = np.argmax(probs[0])
+
+        #update the cm given
+        if label == actualAnimal:
+            cm[actualAnimal, 0] += 1
+        elif label == 1:
+            cm[actualAnimal, 1] += 1
+        else:
+            cm[actualAnimal, 2] += 1
+
+        #append the list of probabilities
+        probabilities.append(probs[0][label])
+
+    return cm, probabilities
