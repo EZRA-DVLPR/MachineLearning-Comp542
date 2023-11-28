@@ -1,7 +1,5 @@
 #helper for the project jupyter notebook
 
-import numpy as np
-
 from PIL import Image
 from os import listdir
 from os.path import isfile, join
