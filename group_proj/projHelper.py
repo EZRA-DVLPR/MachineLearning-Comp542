@@ -134,8 +134,8 @@ def saveModifiedImages(inFolder, outFolder):
         img.save(outFolder + f)
     return
 
-# CODE GOES HERE
-
+#Input: 
+#Output: 
 def getCMProbs(modelNum, files, cm, actualAnimal):
     #actualAnimal == 0 => cat
     #          1 => dog
@@ -144,7 +144,7 @@ def getCMProbs(modelNum, files, cm, actualAnimal):
     animals = ['cat', 'dog', 'panda']
     probabilities = []
 
-    for i in range(2):#len(files)):
+    for i in range(len(files)):
 
         #get image
         img = files[i]
@@ -152,8 +152,10 @@ def getCMProbs(modelNum, files, cm, actualAnimal):
         #prepare model
         if modelNum == 0:
             modelName = 'ViT-B/32'
-        else:
+        elif modelNum == 1:
             modelName = "RN50x16"
+        else:
+            raise ValueError
 
         device = "cuda" if torch.cuda.is_available() else "cpu"
         model, preprocess = clip.load(modelName, device = device)
@@ -170,17 +172,14 @@ def getCMProbs(modelNum, files, cm, actualAnimal):
             probs = np.array(logitsPerImg.softmax(dim = -1).cpu().numpy())
 
         #get the class with the highest probability (predicted label)
-        label = np.argmax(probs[0])
+        pred = np.argmax(probs[0])
 
         #update the cm given
-        if label == actualAnimal:
-            cm[actualAnimal, 0] += 1
-        elif label == 1:
-            cm[actualAnimal, 1] += 1
-        else:
-            cm[actualAnimal, 2] += 1
+        cm[actualAnimal, pred] += 1
 
-        #append the list of probabilities
-        probabilities.append(probs[0][label])
+        #append the highest probability to the list of probabilities
+        probabilities.append(probs[0][pred])
 
     return cm, probabilities
+
+# CODE GOES HERE
