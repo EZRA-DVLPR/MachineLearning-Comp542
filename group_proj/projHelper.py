@@ -80,6 +80,20 @@ def calculateExtremeSizes(folder):
 
 #Input: filepath to a folder containing images (Must end with '/' character)
 #Output: array containing the images as arrays for all images within the given folder
+#           resized => image array
+#           eg. [[...IMG1...], [...IMG2...], ...]
+def getResizedFlattenedArrays(folder):
+    arrayHolder = []
+    onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
+    for f in onlyfiles:
+        img = load_img(folder + f)
+        img = img.resize([500,500])
+        imgarray = img_to_array(img)
+        arrayHolder.append(imgarray.flatten())
+    return arrayHolder
+
+#Input: filepath to a folder containing images (Must end with '/' character)
+#Output: array containing the images as arrays for all images within the given folder
 #           grayscale => resized => image array
 #           eg. [[...IMG1...], [...IMG2...], ...]
 def getResizedGrayscaleFlattenedArrays(folder):
