@@ -80,7 +80,7 @@ def calculateExtremeSizes(folder):
 
 #Input: filepath to a folder containing images (Must end with '/' character)
 #Output: array containing the images as arrays for all images within the given folder
-#           resized => image array
+#           (Steps: resized => image array)
 #           eg. [[...IMG1...], [...IMG2...], ...]
 def getResizedFlattenedArrays(folder):
     arrayHolder = []
@@ -94,7 +94,7 @@ def getResizedFlattenedArrays(folder):
 
 #Input: filepath to a folder containing images (Must end with '/' character)
 #Output: array containing the images as arrays for all images within the given folder
-#           grayscale => resized => image array
+#           (Steps: grayscale => resized => image array)
 #           eg. [[...IMG1...], [...IMG2...], ...]
 def getResizedGrayscaleFlattenedArrays(folder):
     arrayHolder = []
@@ -136,7 +136,8 @@ def avgDims(folder):
     return (allWidth / numImages), (allHeight / numImages)
 
 #Input: source filepath to a folder containing images, destination filepath to a folder containing images
-#Output: N/A  ==>   saves modified images from `getResizedGrayscaleFlattenedArrays` into destination folder
+#Output: N/A  
+#instead saves modified images from `getResizedGrayscaleFlattenedArrays` into destination folder
 def saveModifiedImages(inFolder, outFolder):
     onlyfiles = [f for f in listdir(inFolder) if isfile(join(inFolder, f))]
     for f in onlyfiles:
@@ -148,8 +149,13 @@ def saveModifiedImages(inFolder, outFolder):
         img.save(outFolder + f)
     return
 
-#Input: 
-#Output: 
+#Input: modelNum: 0 => ViT-B/32
+#                 1 => RN50x16
+#       files: [FILEPATHTOIMG, FILEPATHTOIMG, FILEPATHTOIMG, ...]
+#       cm: the confusion matrix that we're updating
+#       actualAnimal: the animal that the image contains
+#Output: cm (now modified)
+#        probabilities (a list of the probability used for each img)
 def getCMProbs(modelNum, files, cm, actualAnimal):
     #actualAnimal == 0 => cat
     #          1 => dog
