@@ -1,7 +1,8 @@
 #helper for the project jupyter notebook
 
+import torch
+import clip
 import numpy as np
-
 from PIL import Image
 from os import listdir
 from os.path import isfile, join
@@ -79,7 +80,21 @@ def calculateExtremeSizes(folder):
 
 #Input: filepath to a folder containing images (Must end with '/' character)
 #Output: array containing the images as arrays for all images within the given folder
-#           grayscale => resized => image array
+#           (Steps: resized => image array)
+#           eg. [[...IMG1...], [...IMG2...], ...]
+def getResizedFlattenedArrays(folder):
+    arrayHolder = []
+    onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
+    for f in onlyfiles:
+        img = load_img(folder + f)
+        img = img.resize([500,500])
+        imgarray = img_to_array(img)
+        arrayHolder.append(imgarray.flatten())
+    return arrayHolder
+
+#Input: filepath to a folder containing images (Must end with '/' character)
+#Output: array containing the images as arrays for all images within the given folder
+#           (Steps: grayscale => resized => image array)
 #           eg. [[...IMG1...], [...IMG2...], ...]
 def getResizedGrayscaleFlattenedArrays(folder):
     arrayHolder = []
@@ -121,7 +136,8 @@ def avgDims(folder):
     return (allWidth / numImages), (allHeight / numImages)
 
 #Input: source filepath to a folder containing images, destination filepath to a folder containing images
-#Output: N/A  ==>   saves modified images from `getResizedGrayscaleFlattenedArrays` into destination folder
+#Output: N/A  
+#instead saves modified images from `getResizedGrayscaleFlattenedArrays` into destination folder
 def saveModifiedImages(inFolder, outFolder):
     onlyfiles = [f for f in listdir(inFolder) if isfile(join(inFolder, f))]
     for f in onlyfiles:
@@ -132,6 +148,59 @@ def saveModifiedImages(inFolder, outFolder):
         imgarray = imgarray.flatten()
         img.save(outFolder + f)
     return
+
+#Input: modelNum: 0 => ViT-B/32
+#                 1 => RN50x16
+#       files: [FILEPATHTOIMG, FILEPATHTOIMG, FILEPATHTOIMG, ...]
+#       cm: the confusion matrix that we're updating
+#       actualAnimal: the animal that the image contains
+#Output: cm (now modified)
+#        probabilities (a list of the probability used for each img)
+def getCMProbs(modelNum, files, cm, actualAnimal):
+    #actualAnimal == 0 => cat
+    #          1 => dog
+    #          2 => panda
+
+    animals = ['cat', 'dog', 'panda']
+    probabilities = []
+
+    for i in range(len(files)):
+
+        #get image
+        img = files[i]
+
+        #prepare model
+        if modelNum == 0:
+            modelName = 'ViT-B/32'
+        elif modelNum == 1:
+            modelName = "RN50x16"
+        else:
+            raise ValueError
+
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        model, preprocess = clip.load(modelName, device = device)
+
+        #preprocess img and move to device
+        img = preprocess(Image.open(img)).unsqueeze(0).to(device)
+
+        #tokenize animal categories for prediction
+        text = clip.tokenize(animals).to(device)
+
+        #make prediction purely on the Number of Logits per Image
+        with torch.no_grad():
+            logitsPerImg, _ = model(img, text)
+            probs = np.array(logitsPerImg.softmax(dim = -1).cpu().numpy())
+
+        #get the class with the highest probability (predicted label)
+        pred = np.argmax(probs[0])
+
+        #update the cm given
+        cm[actualAnimal, pred] += 1
+
+        #append the highest probability to the list of probabilities
+        probabilities.append(probs[0][pred])
+
+    return cm, probabilities
 
 #normalize images by scaling pixel values to be within [0-1] instead of [0-255]
 def scalePixels(arr) :
