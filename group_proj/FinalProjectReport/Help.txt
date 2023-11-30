@@ -11,3 +11,12 @@ How to include a file:
 to import a new page into this document, use  `\include{FILENAME}`
     Note: FILENAME does NOT include the `.tex` file extension
 Compilation follows as normal
+
+Guidelines Given:
+• Introduction: Describe the problem, data, data preparation, and data visualization
+• Related work: Explain if there is a relevant paper that worked on the same problem
+• Methods: Describe the methods that you used to solve the problem
+• Evaluation: Compare the methods you used
+• Conclusion: Write a conclusion and future work for your project
+• References: List all your references
+        [NOTE: References will be done within the `ProjectReport.tex` file]
