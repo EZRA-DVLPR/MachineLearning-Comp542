@@ -202,4 +202,11 @@ def getCMProbs(modelNum, files, cm, actualAnimal):
 
     return cm, probabilities
 
+#normalize images by scaling pixel values to be within [0-1] instead of [0-255]
+def scalePixels(arr) :
+    for i in arr :
+        i /= 255
+    
+    return arr
+
 # CODE GOES HERE
