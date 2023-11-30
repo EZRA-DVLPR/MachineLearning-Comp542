@@ -20,3 +20,7 @@ Guidelines Given:
 • Conclusion: Write a conclusion and future work for your project
 • References: List all your references
         [NOTE: References will be done within the `ProjectReport.tex` file]
+
+Tips:
+To use a citation type: `\cite[NAMEGIVEN]`
+    The `NAMEGIVEN` should match EXACTLY to the name in the `bibitem{NAMEGIVEN}`
