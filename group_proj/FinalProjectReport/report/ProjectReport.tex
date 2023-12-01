@@ -3,58 +3,49 @@
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage{cite}
+\usepackage{hyperref}
 \usepackage[table]{xcolor}
+\usepackage{geometry}
+
+\geometry{margin=1in} % Adjust margins as needed
 %
 \begin{document}
 %
-   \title{Matrices with Matlab}
-
-   \author{
-   Isaiah Martinez \\ CSUN \\ Computer Science Department \\ isaiah.martinez.891@my.csun.edu
-   \and
-   Joycelyn Tuazon \\ CSUN \\ Computer Science Department \\ schoolemail@my.csun.edu}
+  \title{Animal Image Classification}
+  \author{
+  Isaiah Martinez \\ CSUN \\ Computer Science Department \\ isaiah.martinez.891@my.csun.edu
+  \and
+  Joycelyn Tuazon \\ CSUN \\ Computer Science Department \\ schoolemail@my.csun.edu}
           
-   \date{12/02/2023}
+  \date{12/02/2023}
 
-   \maketitle
+  \maketitle
    
-   \tableofcontents
+  \tableofcontents
  
   % to import a new page into this document, use
   % `\include{FILENAME}`
   %     Note: FILENAME does NOT include the `.tex` file extension
   % compilation follows as normal
 
-
-  %remember to add a `\new page` line before and after each section
-
   \newpage
 
   \include{Intro}
-  
-  \newpage
-
   \include{RelatedWorks}
-
-  \newpage
-
   \include{Methods}
-
-  \newpage
-
   \include{Evaluation}
-
-  \newpage
-
   \include{Conclusion}
 
     % bibliography / References
 
   \begin{thebibliography}{}
 
-    \bibitem{NAME1} CITATION1
+    \bibitem{AIAdv} \href{https://ai100.stanford.edu/gathering-strength-gathering-storms-one-hundred-year-study-artificial-intelligence-ai100-2021-1/sq2#:~:text=In%20the%20last%20five%20years,and%20integration%20of%20vision%20and}{Stanford: What are the most important Advances in AI?}
+
+    \bibitem{publicOpinion} \href{https://www.pewresearch.org/short-reads/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/}{PRC: Growing public concern about the role of artificial intelligence in daily life}
   
-     \bibitem{NAME2} CITATION2
+    \bibitem{Dataset} \href{https://www.kaggle.com/datasets/ashishsaxena2209/animal-image-datasetdog-cat-and-panda}{Kaggle: Animal Image Dataset(DOG, CAT and PANDA)}
+
   
   \end{thebibliography}
 

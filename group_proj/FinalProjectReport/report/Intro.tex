@@ -1,30 +1,54 @@
 \section{Introduction}
-[Background on the topic]
+
+\subsection{Background}
+In recent years, AI has been an growing topic. 
+Many advancements have been made in several areas within AI including Computer Vision, Natural Language Processing, and other Machine Learning (ML) and Deep Learning (DL) projects \cite{AIAdv}.
+With the release of LLM's such as ChatGPT and Dall-E, the public can now use these tools. 
+However, the general public views AI as a negative advancement in technology. 
+The main belief is that it reduces privacy, but can assist in other areas of life such as finding accurate information online
+\cite{publicOpinion}.
+
+
+\subsection{Project Description}
+Our project was designed to show AI can be helpful tool.
+Additionally, we are beginners in the realm of ML, so this project serves as a step towards real world problem solving.
+The problem we sought to solve was Image Classification.
+We employed several ML algorithms to perform Animal Classification for images.
+Our goal was to learn how to do Image Classification using different methodologies to accurately predict whether an image contained a: cat, dog, or panda.
+
+\subsection{Dataset Overview and Preparation}
+The dataset used contained 3000 RGB images separated into 3 folders, 1 folder per animal \cite{Dataset}.
+These images ranged varying sizes, ranging less than 100 pixels by 100 pixels to larger than 1000 pixels by 1000 pixels.
+Each folder contained 1000 images of the depicted animal.
+From the given images, we selected images that were deemed clean and usable for our models.
+After cleaning, we had 2,952 images.
+Our criteria for removing images was as follows:
 
 \begin{enumerate}
-\item In the first section we will describe the process toward which the results of the project were obtained.
-\item The section presents the results we obtained with...
+    \item Multiple interested animal species in the same image. For example, a cat and a dog within the same image.
+    \item Too small of an image size: less than 100 pixels by 100 pixels.
+    \item Subject of the image was too difficult to see. This may include obscurities, filters, low resolution, etc.
+    \item The image did not contain the subject animal.
 \end{enumerate}
 
-The introduction should state clearly why the study was started
-and give a relatively short and essential overview of the topic
-you are exploring. References to previous works can be made here.
- 
-The introduction should not contain the conclusions. 
-At the end of the introduction the outline of the paper may be described.
+After cleaning the images, we further prepared the dataset to be entered into a readable format for the various models we selected. These included:
+\begin{itemize}
+    \item Resizing images to 500 pixels by 500 pixels
+    \item Resiging images to 224 pixels 224 pixels
+    \item Converting images to grayscale
+    \item Converting images to arrays
+    \item Creating new images by augmenting the given images
+    \begin{itemize} 
+        \item Augment effects included: rotation, zoom, horizontal flipping, vertical/horizonal shifting, shear transforming, and pixel filling.
+    \end{itemize}
+\end{itemize}
 
+With these changes in mind, the amount of data becomes: 2,952 images and $(Length * Width * Color Mode) + 1$ Features. 
+Thus for images in RGB sized 500 pixels by 500 pixels, we would have 750,001 features.
+The reasons for having different image sizes, color modes, and data augmentation was to increase the performance and reduce the runtime to construct the models.
 
-(Problem)
-We wanted to learn more about using Machine Learning techniques in Image Classification.
-
-(Dataset + Description)
-Cat, Dog, Panda of RGB images of sizes. Simple metrics and dataset size.
-
-(Data Preparation)
-RGB, Grayscale, into array, sizing
-
-(Data Visualization)
-Insert sample image (1-2) + conversion to array
-How did conversion work for each case
-
-\cite{NAME1} We will see...
+\subsection{Outline}
+The outline of this paper is as follows: First we will discuss the research that contributed to our understanding and gave insights into beginning the project.
+Second, we will discuss the methods and techniques employed to achieve our goal of making an image classifier.
+Afterwards, we will evaluate and compare the performance of our models.
+Lastly, we will discuss some future works that can be done to explore further into this topic.
