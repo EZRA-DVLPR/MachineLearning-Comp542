@@ -3,10 +3,24 @@
 \section{Methods}
 
 The SVM, ResNet50, CNN, and VGG16 classifiers were implemented for our project. We also experimented with CLIP to learn about how the model approached image classification.
+Below, we will describe the algorithms we used in detail, as well as
 
 \subsection{SVM}
+SVM operates by defining a division line between classes using a kernel function. 
+The chosen kernel function, uses parameters $C$ and $\gamma$ to perform the calculation to separate the dataset into their respective classes.
+In our case, we converted the images to arrays to allow SVM to process our dataset.
+Before feeding the dataset, it is imperative to have the dataset standardized.
+We decided to standardize it using MinMaxScaler, as StandardScaler would change the data to be within the range $[0,1]$.
+This took extra time to process, and ultimately yielded no significant improvement in performance.
+By implementing a Pipeline, we were able to consolidate the code and concisely read the process being done by the program.
+Also, by using GridSearch, we were able to let the SVM classifier run with a K-Fold execution added to find the best performing model on average.
 
-\subsection{ResNet50}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{SVM_explained.png}
+	\caption{SVM code with Grid Search within the Jupyter Notebook}
+	\label{fig:figure1}
+\end{figure}
 
 \subsection{CNN}
 Convolutional Neural Networks (CNN) is commonly used for image classification tasks. Typically, CNN models consist of convolutional layers that apply filters to extract features and patterns, pooling layers to retain the important features and patterns, and fully connected layers to make predictions based on the features learned in the convolutional and pooling layers.
@@ -22,6 +36,21 @@ Our CNN model implements a sequential structure, where the layers are added line
 Our convoluted layers use the Rectified Linear Unit (ReLu) activation function to introduce non-linearity, this way our model can learn complex relationships between the features of our data. The ReLu activation function sets negative values found in the convolution matrix to 0, allowing the model to focus on the positive values that likely represent relevant features. In between the dense layers, we implemented dropout regularization to prevent overfitting. Dropout works by temporarily setting the weights of a random set of neurons to 0 ("dropping out") per epoch. This prevents overfitting by forcing the model to learn more robustly instead of relying too much on the recognition of certain features and "memorizing" the training data. The output dense layer uses the Softmax activation function to scale the numerical output of the model into probabilities distributed over the possible output classes represented by indexes. The class with the highest probability is considered the predicted class which is mapped to the string value of the class using the index value.
 
 While fitting the model, we implemented the EarlyStopping callback to reduce the likelihood of overfitting by stopping training if the validation accuracy did not improve after 5 consecutive epochs. The EarlyStopping callback can also be useful in preventing underfitting if the number of epochs is set to a higher number than what is expected to be necessary. 
+
+\subsection{ResNet50}
+
+Residual Network 50 (ResNet50) is a type of CNN algorithm that contains 50 hidden layers. 
+This algorithm allows for the use of Convolution2D and MaxPooling2D layers just like the standard CNN algorithm.
+The 'Residual' portion refers to how the gradient is handled within the structure of the algorithm itself.
+The gradient is the result calculated from the partial derivatives of the loss function, with respect to the given data's parameters \cite{Gradient}.
+Instead of using standard back-propogation, it has a separate structure called a residual block which allows for the gradient to flow more easily through the entire structured network\cite{RN50}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{ResNet_structure.jpg}
+	\caption{A sample structure of the Res Net 50 Algorithm}
+	\label{fig:figure5}
+\end{figure}
 
 \subsection{VGG16}
 VGG16 is a pre-trained CNN model available for use through Tensorflow. VGG16 was pre-trained for image classification on large datasets such as ImageNet where the input image size was 224x224 pixels with 3 color channels (RGB). Its structure consists of 13 convoluted layers and 3 fully connected dense layers (16 layers total). We decided to use a pre-trained VGG16 model instead of building one from scratch to learn how efficiently it would execute our particular image classification task. 

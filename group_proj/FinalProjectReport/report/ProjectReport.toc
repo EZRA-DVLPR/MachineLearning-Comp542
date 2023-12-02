@@ -12,9 +12,9 @@
 \contentsline {subsection}{\numberline {2.5}Hypothesis}{3}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Methods}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}SVM}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}ResNet50}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}CNN}{4}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}VGG16}{4}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Evaluation}{6}{section.4}%
-\contentsline {section}{\numberline {5}Conclusion}{7}{section.5}%
-\contentsline {section}{\numberline {6}Future Work}{7}{section.6}%
+\contentsline {subsection}{\numberline {3.2}CNN}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}ResNet50}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}VGG16}{6}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Evaluation}{7}{section.4}%
+\contentsline {section}{\numberline {5}Conclusion}{8}{section.5}%
+\contentsline {section}{\numberline {6}Future Work}{8}{section.6}%
