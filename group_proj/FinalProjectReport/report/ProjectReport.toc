@@ -17,8 +17,8 @@
 \contentsline {subsection}{\numberline {3.4}VGG16}{7}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Evaluation}{8}{section.4}%
 \contentsline {subsection}{\numberline {4.1}SVM}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}ResNet50}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}CNN}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.2}CNN}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}ResNet50}{9}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}VGG16}{9}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}%
-\contentsline {section}{\numberline {6}Future Work}{10}{section.6}%
+\contentsline {section}{\numberline {5}Conclusion}{11}{section.5}%
+\contentsline {section}{\numberline {6}Future Work}{11}{section.6}%

@@ -27,14 +27,36 @@ We also referred to a confusion matrix for each model that summarized how well c
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{multiclass_cfm}
-	\caption{When analyzing the first class, TP represent true positive instances, TN true negative instances, FP false positive instances, and FN false negative instances.}
+	\includegraphics[scale=0.4]{multiclass_cfm}
+	\caption{Multi-Class Confusion Matrix}
 	\label{fig:figure3}
 \end{figure}
 
+When analyzing the first class, TP represent true positive instances, TN true negative instances, FP false positive instances, and FN false negative instances.
+
 \subsection{SVM}
 
-\subsection{ResNet50}
+SVM took a long time to run when looking at all the data, resulting in several days to compute a single model.
+By using Grid Search to find the best hyperparameter values, we were able to compute the following Confusion Matrix.
+However, this model was severely overfitting as seen in \ref{fig:figure19}.
+It was decided that instead of trying to work with SVM which would take a long time to compute the model, we would focus more so on the various CNN algorithms.
+The best hyperparameters found to compute the following results were $C = 10$ and $\gamma = \frac{1}{250,001}$.
+
+\begin{figure}[h]
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{csvm_cfm}
+        \caption{Confusion Matrix of SVM}
+        \label{fig:figure3}
+    \end{subfigure}
+    \hspace{0.2\textwidth}
+	\begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{svm_overfit}
+        \caption{Confusion Matrix of SVM}
+        \label{fig:figure19}
+    \end{subfigure}
+\end{figure}
 
 \subsection{CNN}
 The first few training runs were done on a simpler CNN model with less convoluted and max-pooling layers. While run time was fairly quick, performance was low as the model was too simple. We experimented with adding more convoluted and max-pooling layers and found that adding too many made training time too long considering that performance did not improve much. The final structure is what we found to be the most efficient training-time wise for our project while also considering performance. Most runs averaged between 50-60\% accuracy before applying data augmentation and improved to 60-70\% after applying data augmentation. Our final run reached about 76\% test accuracy with a 76\% precision score, 76\% recall score, and a 75\% f1 score. The confusion matrix for our final CNN run is shown in Figure \ref{fig:figure4} below.
@@ -44,6 +66,29 @@ The first few training runs were done on a simpler CNN model with less convolute
 	\includegraphics[scale=0.5]{CNN_cfm}
 	\caption{Confusion matrix for final CNN run. The model consistently had the most difficulty classifying dogs and the most success classifying pandas.}
 	\label{fig:figure4}
+\end{figure}
+
+\subsection{ResNet50}
+
+There were several models that were made in order to get better results.
+The models used differing amounts of hidden layers, dropout, Conv2D, and MaxPooling2D layers.
+We found that the best perfoming model was a simple structure with a single hidden layer with a dropout of 20\%.
+This model yielded an accuracy of 61\%.
+
+\begin{figure}[h]
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{resnet50_acc}
+        \caption{Res Net 50: Accuracy vs Epochs}
+        \label{fig:figure3}
+    \end{subfigure}
+    \hspace{0.2\textwidth}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{resnet50loss}
+        \caption{Res Net 50: Loss vs Epochs}
+        \label{fig:figure3}
+    \end{subfigure}
 \end{figure}
 
 \subsection{VGG16}
