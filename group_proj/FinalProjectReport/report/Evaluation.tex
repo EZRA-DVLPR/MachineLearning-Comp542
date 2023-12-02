@@ -1,3 +1,57 @@
+\graphicspath{ {project_images/} }
+
 \section{Evaluation}
-[Evaluate and compare the models performance]
-Evaluation: Compare the methods you used
+Evaluation of our models involved analyzing the following metrics:
+
+\begin{itemize}
+	\item Test accuracy
+	\begin{itemize}
+		\item Measures how well the model makes correct predictions on data it has not seen before in training.
+	\end{itemize}
+	\item Precision score
+	\begin{itemize}
+		\item Measures how many positive predictions are true positives.
+	\end{itemize}
+	\item Recall score
+	\begin{itemize}
+		\item Measures how well the model predicts all positive instances.
+	\end{itemize}
+	\item F1 score
+	\begin{itemize}
+		\item Measure the mean between precision and recall.
+		\item This is especially useful since our dataset has a different amount of instances of each class. 
+	\end{itemize}
+\end{itemize}
+
+We also referred to a confusion matrix for each model that summarized how well classification was executed. Figure \ref{fig:figure3} below demonstrates the value of the elements of a multi-class confusion matrix from the perspective of the first class.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{multiclass_cfm}
+	\caption{When analyzing the first class, TP represent true positive instances, TN true negative instances, FP false positive instances, and FN false negative instances.}
+	\label{fig:figure3}
+\end{figure}
+
+\subsection{SVM}
+
+\subsection{ResNet50}
+
+\subsection{CNN}
+The first few training runs were done on a simpler CNN model with less convoluted and max-pooling layers. While run time was fairly quick, performance was low as the model was too simple. We experimented with adding more convoluted and max-pooling layers and found that adding too many made training time too long considering that performance did not improve much. The final structure is what we found to be the most efficient training-time wise for our project while also considering performance. Most runs averaged between 50-60\% accuracy before applying data augmentation and improved to 60-70\% after applying data augmentation. Our final run reached about 76\% test accuracy with a 76\% precision score, 76\% recall score, and a 75\% f1 score. The confusion matrix for our final CNN run is shown in Figure \ref{fig:figure4} below.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{CNN_cfm}
+	\caption{Confusion matrix for final CNN run. The model consistently had the most difficulty classifying dogs and the most success classifying pandas.}
+	\label{fig:figure4}
+\end{figure}
+
+\subsection{VGG16}
+The first training run was done with 3 dense layers manually added on top of the pre-trained VGG16 model and took approximately 14 hours to run through 15 epochs (there were 25 total epochs but the EarlyStopping callback was implemented which stopped training after 15 epochs). This first run yielded about 50\% accuracy and after experimenting with different hyperparameter values, it was apparent that the long run time could be shortened by removing a dense layer to decrease the complexity of the model without sacrificing performance too much. This is most likely because our dataset is small compared to what the VGG16 model was pre-trained on, and so an increase in complexity did not increase performance as the model struggled learn stably. Reducing the number of dense layers to 2 decreased training time to approximately 18 minutes per epoch (as opposed to 1 hour and 20 minutes per epoch before removing the third dense layer). Most runs stayed between 50-60\% with and without data augmentation. Our final run scored about 55\% on test accuracy, 58\% on precision, 55\% on recall, and 49\% on f1. The confusion matrix for our final VGG16 run is shown in Figure\ref{fig:figure5} below, where a significant number of false predictions can be observed. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{VGG16_cfm}
+	\caption{Confusion matrix for final VGG16 run.}
+	\label{fig:figure5}
+\end{figure}

@@ -1,4 +1,4 @@
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Background}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Project Description}{2}{subsection.1.2}%
@@ -16,5 +16,9 @@
 \contentsline {subsection}{\numberline {3.3}ResNet50}{5}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}VGG16}{6}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Evaluation}{7}{section.4}%
-\contentsline {section}{\numberline {5}Conclusion}{8}{section.5}%
-\contentsline {section}{\numberline {6}Future Work}{8}{section.6}%
+\contentsline {subsection}{\numberline {4.1}SVM}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}ResNet50}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}CNN}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}VGG16}{8}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusion}{9}{section.5}%
+\contentsline {section}{\numberline {6}Future Work}{9}{section.6}%
