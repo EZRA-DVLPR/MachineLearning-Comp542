@@ -9,16 +9,16 @@
 \contentsline {subsection}{\numberline {2.2}CNN}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}VGG16}{3}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}CLIP}{3}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Hypothesis}{3}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Methods}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}SVM}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}CNN}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}ResNet50}{5}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}VGG16}{6}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Evaluation}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}SVM}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}ResNet50}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}CNN}{7}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}VGG16}{8}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusion}{9}{section.5}%
-\contentsline {section}{\numberline {6}Future Work}{9}{section.6}%
+\contentsline {subsection}{\numberline {2.5}Hypothesis}{4}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Methods}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}SVM}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}CNN}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}ResNet50}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}VGG16}{7}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Evaluation}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}SVM}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}ResNet50}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}CNN}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}VGG16}{9}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}%
+\contentsline {section}{\numberline {6}Future Work}{10}{section.6}%

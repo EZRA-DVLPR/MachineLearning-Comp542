@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.30)  2 DEC 2023 02:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.30)  2 DEC 2023 03:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -408,32 +408,32 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout2 = `RelatedWorks.aux'.
 
  (./RelatedWorks.tex
-Overfull \hbox (4.75513pt too wide) in paragraph at lines 21--26
+Overfull \hbox (4.75513pt too wide) in paragraph at lines 22--27
 \OT1/cmr/m/n/10 As a last ex-per-i-men-tal al-go-rithm, we also used a re-centl
 y de-vel-oped al-go-rithm called Con-trastive Language-
  []
 
-<project_images//CLIP_structure.png, id=152, 714.67pt x 251.94125pt>
+<project_images//CLIP_structure.png, id=153, 714.67pt x 251.94125pt>
 File: project_images//CLIP_structure.png Graphic file (type png)
 <use project_images//CLIP_structure.png>
 Package pdftex.def Info: project_images//CLIP_structure.png  used on input line
- 29.
+ 30.
 (pdftex.def)             Requested size: 357.33412pt x 125.9703pt.
 ) [3
 
 
 
- <./project_images//CLIP_structure.png>]
+ <./project_images//CLIP_structure.png>] [4]
 \openout2 = `Methods.aux'.
 
  (./Methods.tex
-<project_images//SVM_explained.png, id=166, 826.08624pt x 214.8025pt>
+<project_images//SVM_explained.png, id=172, 826.08624pt x 214.8025pt>
 File: project_images//SVM_explained.png Graphic file (type png)
 <use project_images//SVM_explained.png>
 Package pdftex.def Info: project_images//SVM_explained.png  used on input line 
 20.
 (pdftex.def)             Requested size: 413.0421pt x 107.40099pt.
-<project_images//CNN_structure.png, id=169, 486.81876pt x 515.9275pt>
+<project_images//CNN_structure.png, id=175, 486.81876pt x 515.9275pt>
 File: project_images//CNN_structure.png Graphic file (type png)
 <use project_images//CNN_structure.png>
 Package pdftex.def Info: project_images//CNN_structure.png  used on input line 
@@ -443,36 +443,36 @@ Package pdftex.def Info: project_images//CNN_structure.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4
+[5
 
 
 
  <./project_images//SVM_explained.png>]
-<project_images//ResNet_structure.jpg, id=180, 463.7325pt x 122.4575pt>
+<project_images//ResNet_structure.jpg, id=186, 463.7325pt x 122.4575pt>
 File: project_images//ResNet_structure.jpg Graphic file (type jpg)
 <use project_images//ResNet_structure.jpg>
 Package pdftex.def Info: project_images//ResNet_structure.jpg  used on input li
 ne 50.
 (pdftex.def)             Requested size: 231.86568pt x 61.22859pt.
- [5 <./project_images//CNN_structure.png> <./project_images//ResNet_structure.j
+ [6 <./project_images//CNN_structure.png> <./project_images//ResNet_structure.j
 pg>]
-<project_images//VGG16_structure.png, id=191, 491.8375pt x 212.795pt>
+<project_images//VGG16_structure.png, id=197, 491.8375pt x 212.795pt>
 File: project_images//VGG16_structure.png Graphic file (type png)
 <use project_images//VGG16_structure.png>
 Package pdftex.def Info: project_images//VGG16_structure.png  used on input lin
 e 61.
 (pdftex.def)             Requested size: 245.91814pt x 106.39723pt.
-) [6 <./project_images//VGG16_structure.png>]
+) [7 <./project_images//VGG16_structure.png>]
 \openout2 = `Evaluation.aux'.
 
  (./Evaluation.tex
-<project_images//multiclass_cfm.png, id=200, 262.9825pt x 260.975pt>
+<project_images//multiclass_cfm.png, id=207, 262.9825pt x 260.975pt>
 File: project_images//multiclass_cfm.png Graphic file (type png)
 <use project_images//multiclass_cfm.png>
 Package pdftex.def Info: project_images//multiclass_cfm.png  used on input line
  30.
 (pdftex.def)             Requested size: 131.49092pt x 130.48718pt.
-<project_images//CNN_cfm.png, id=202, 350.30875pt x 295.1025pt>
+<project_images//CNN_cfm.png, id=209, 350.30875pt x 295.1025pt>
 File: project_images//CNN_cfm.png Graphic file (type png)
 <use project_images//CNN_cfm.png>
 Package pdftex.def Info: project_images//CNN_cfm.png  used on input line 44.
@@ -481,24 +481,24 @@ Package pdftex.def Info: project_images//CNN_cfm.png  used on input line 44.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7
+[8
 
 
 
  <./project_images//multiclass_cfm.png>]
-<project_images//VGG16_cfm.png, id=212, 356.33125pt x 300.12125pt>
+<project_images//VGG16_cfm.png, id=218, 356.33125pt x 300.12125pt>
 File: project_images//VGG16_cfm.png Graphic file (type png)
 <use project_images//VGG16_cfm.png>
 Package pdftex.def Info: project_images//VGG16_cfm.png  used on input line 54.
 (pdftex.def)             Requested size: 178.16518pt x 150.06026pt.
-) [8 <./project_images//CNN_cfm.png> <./project_images//VGG16_cfm.png>]
+) [9 <./project_images//CNN_cfm.png> <./project_images//VGG16_cfm.png>]
 \openout2 = `Conclusion.aux'.
 
- (./Conclusion.tex) [9
+ (./Conclusion.tex) [10
 
 
 
-] [10
+] [11
 
 
 ]
@@ -511,10 +511,10 @@ Package rerunfilecheck Info: File `ProjectReport.out' has not changed.
 (rerunfilecheck)             Checksum: 7E1CD3F26A1D1667F61A1B87E1F2EA3B;2229.
  ) 
 Here is how much of TeX's memory you used:
- 10657 strings out of 477476
- 173708 string characters out of 5824243
+ 10660 strings out of 477476
+ 173750 string characters out of 5824243
  1865388 words of memory out of 5000000
- 30671 multiletter control sequences out of 15000+600000
+ 30672 multiletter control sequences out of 15000+600000
  517223 words of font info for 48 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  75i,7n,76p,2242b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -528,10 +528,10 @@ ts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023basic/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023basic/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on ProjectReport.pdf (10 pages, 512264 bytes).
+Output written on ProjectReport.pdf (11 pages, 513902 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 255 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
