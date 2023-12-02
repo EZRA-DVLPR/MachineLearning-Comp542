@@ -1,24 +1,24 @@
 \graphicspath{ {project_images/} }
 
 \section{Evaluation}
-Evaluation of our models involved analyzing the following metrics:
+When evaluating the performance metrics of our models, we analyzed the relationships between the statistical measures when analyzing the first class: TP = true positive instances, TN = true negative instances, FP = false positive instances, and FN = false negative instances.
 
 \begin{itemize}
 	\item Test accuracy
 	\begin{itemize}
-		\item Measures how well the model makes correct predictions on data it has not seen before in training.
+		\item Measures how well the model makes correct predictions on data it has not seen before in training. $\frac{TP + TN}{TP + TN + FP + FN}$
 	\end{itemize}
 	\item Precision score
 	\begin{itemize}
-		\item Measures how many positive predictions are true positives.
+		\item Measures how many positive predictions are true positives. $\frac{TP}{TP + FP}$
 	\end{itemize}
 	\item Recall score
 	\begin{itemize}
-		\item Measures how well the model predicts all positive instances.
+		\item Measures how well the model predicts all positive instances. $\frac{TP}{TP + FN}$
 	\end{itemize}
 	\item F1 score
 	\begin{itemize}
-		\item Measure the mean between precision and recall.
+		\item Measure the mean between precision and recall. $\frac{2 * Precision * Recall}{Precision + Recall}$
 		\item This is especially useful since our dataset has a different amount of instances of each class. 
 	\end{itemize}
 \end{itemize}
@@ -31,8 +31,6 @@ We also referred to a confusion matrix for each model that summarized how well c
 	\caption{Multi-Class Confusion Matrix}
 	\label{fig:figure3}
 \end{figure}
-
-When analyzing the first class, TP represent true positive instances, TN true negative instances, FP false positive instances, and FN false negative instances.
 
 \subsection{SVM}
 

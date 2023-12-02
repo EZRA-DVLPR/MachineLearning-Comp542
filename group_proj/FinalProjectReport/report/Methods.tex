@@ -2,8 +2,8 @@
 
 \section{Methods}
 
-The SVM, ResNet50, CNN, and VGG16 classifiers were implemented for our project. We also experimented with CLIP to learn about how the model approached image classification.
-Below, we will describe the algorithms we used in detail, as well as
+The SVM, CNN, ResNet50, and VGG16 classifiers were implemented for our project.
+Below, we will describe the algorithms we used in detail.
 
 \subsection{SVM}
 SVM operates by defining a division line between classes using a kernel function. 
@@ -13,7 +13,7 @@ Before feeding the dataset, it is imperative to have the dataset standardized.
 We decided to standardize it using MinMaxScaler, as StandardScaler would change the data to be within the range $[0,1]$.
 This took extra time to process, and ultimately yielded no significant improvement in performance.
 By implementing a Pipeline, we were able to consolidate the code and concisely read the process being done by the program.
-Also, by using GridSearch, we were able to let the SVM classifier run with a K-Fold execution added to find the best performing model on average.
+Also, by using GridSearch, we were able to let the SVM classifier run with a K-Fold comparison added to find the best performing model.
 
 \begin{figure}[h]
 	\centering

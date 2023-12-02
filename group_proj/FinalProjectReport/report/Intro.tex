@@ -14,41 +14,38 @@ Our project was designed to show AI can be helpful tool.
 Additionally, we are beginners in the realm of ML, so this project serves as a step towards real world problem solving.
 The problem we sought to solve was Image Classification.
 We employed several ML algorithms to perform Animal Classification for images.
-Our goal was to learn how to do Image Classification using different methodologies to accurately predict whether an image contained a: cat, dog, or panda.
+Our goal was to learn how to do Image Classification using different methodologies to accurately predict whether an image contained one of the following animals: a cat, dog, or panda.
 
 \subsection{Dataset Overview and Preparation}
 The dataset used contained 3000 RGB images separated into 3 folders, 1 folder per animal \cite{Dataset}.
 These images ranged varying sizes, ranging less than 100 pixels by 100 pixels to larger than 1000 pixels by 1000 pixels.
 Each folder contained 1000 images of the depicted animal.
-From the given images, we selected images that were deemed clean and usable for our models.
-After cleaning, we had 2,952 images.
-Our criteria for removing images was as follows:
+Not all images were representative of the subject described and were removed.
+After cleaning the dataset, we had 2,952 images remaining.
+Our criteria for removing images were as follows:
 
 \begin{enumerate}
-    \item Multiple interested animal species in the same image. For example, a cat and a dog within the same image.
+    \item Multiple interested animal species in the same image. eg. a cat and a dog within the same image.
     \item Too small of an image size: less than 100 pixels by 100 pixels.
-    \item Subject of the image was too difficult to see. This may include obscurities, filters, low resolution, etc.
+    \item Subject of the image was not easily visible: caused by obscurities, filters, low resolution, etc.
     \item The image did not contain the subject animal.
 \end{enumerate}
 
 After cleaning the images, we further prepared the dataset to be entered into a readable format for the various models we selected. These included:
 \begin{itemize}
-    \item Resizing images to 500 pixels by 500 pixels or 224 pixels 224 pixels
+    \item Resizing images to 500 pixels by 500 pixels or 224 pixels by 224 pixels
     \item Converting images to grayscale
     \item Converting images to arrays
-    \item Creating new images by augmenting the given images
-    \begin{itemize} 
-        \item Augment effects included: rotation, zoom, horizontal flipping, vertical/horizonal shifting, shear transforming, and pixel filling.
-    \end{itemize}
+    \item Creating new images by augmenting the given images using the following effects: rotation, zoom, horizontal flipping, vertical/horizonal shifting, shear transforming, and pixel filling.
 \end{itemize}
 
-With these changes in mind, the amount of data becomes: 2,952 images and $(Length * Width * Color Mode) + 1$ Features. 
+With these changes in mind, the amount of data resulted in: 2,952 images and $(Length * Width * Color Mode) + 1$ Features. 
 Thus for images in RGB sized 500 pixels by 500 pixels, we would have 750,001 features.
-The reasons for having different image sizes, color modes, and data augmentation was to increase the performance and reduce the runtime to construct the models.
+The reason for implementing these changes to the dataset was to improve performance of the models, as well as speed up the creation of the models.
 
 \subsection{Outline}
 The outline of this paper is as follows: First, we will discuss the research that contributed to our understanding and gave insights into beginning the project.
-Second, we will discuss the methods and techniques employed to achieve our goal of making an image classifier.
+Second, we will describe the algorithms used as well as the techniques employed to achieve our goal of making image classifiers.
 Afterwards, we will evaluate and compare the performance of our models.
-Following the evaluations, we will summarize and draw conclusions from our results.
+Following the evaluations, we will summarize and draw conclusions from the results.
 Lastly, we will discuss some future works that can be done to explore further into this topic.

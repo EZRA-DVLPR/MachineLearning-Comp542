@@ -1,6 +1,9 @@
 \graphicspath{ {project_images/} }
 \section{Related Works}
 
+This section outlines the research done to find several algorithms that can be used to construct image classifiers.
+Each of the following algorithms, except for CLIP, will be explained in more detail within the Methods section.
+
 \subsection{SVM}
 The first algorithm we looked at was Support Vector Machine (SVM) Classifier. 
 Initial Research done showed that SVM outperformed Naive Bayes when perfoming image classification \cite{SVM}.
@@ -14,16 +17,18 @@ Additionally, there are various works using CNN models to perform varying types 
 When constructing our CNN models, we used the ReLu activation function for each hidden layer as well as the Adam optimizer since this seemed to be a common practice to improve performance.
 
 \subsection{VGG16}
-The VGG16 algorithm was particularly interesting to us because it is available for use as a pre-trained model.
-There is one work in particular that conducted an experiment that involved using the pre-trained VGG16 model to classify greyscale images of dogs and cats \cite{VGG16Greyscale}. We had discussed the possibility of converting our dataset to greyscale images to potentially reduce computational load. We did end up converting our images to greyscale and this article confirmed that it would be possible to train the VGG16 model on greyscale images. 
-VGG16 was pre-trained on a much larger data set than ours, and data augmentation methods were applied to our dataset as an approach to improving performance as it seemed to be a straightforward to increase the amount of data that the VGG16 model would see.
+The VGG16 algorithm is available for use as a pre-trained model.
+It was pre-trained to classify grayscale images of dogs and cats \cite{VGG16Greyscale}.
+Upon discovery of how the model was trained, we decided to convert our images to grayscale.
+VGG16 was pre-trained on a much larger data set than ours, and data augmentation methods were applied to our dataset as an approach to improving performance.
+This seemed to be a straightforward attempt to increase the amount of data that the VGG16 model would see.
 
 \subsection{CLIP}
 As a last experimental algorithm, we also used a recently developed algorithm called Contrastive Language-Image Pre-training (CLIP) from OpenAI, the creators of prominent AI development technologies \cite{CLIP}.
 This algorithm is a pre-trained model on images that are encoded, as well as associated text that has also been encoded to match the image.
 The advantage of using CLIP was to experiment by using a novel technique called Zero-Shot Prediction (ZSP).
-ZSP is the notion of encoding an image as well as a list of text that is the target feature, and having the pre-trained model perform a prediction based on no training from your dataset.
-In our case, the target feature was to determine the target animal within the image: cat, dog, or panda.
+ZSP is the notion of encoding an image as well as a list of text that is the target feature, and having the pre-trained model perform a prediction based on no training from the desired dataset.
+Because of the inability to change parameters and adjust the model, it will be excluded from the comparison to the other techniques.
 
 \begin{figure}[h]
 	\centering
@@ -32,10 +37,7 @@ In our case, the target feature was to determine the target animal within the im
 	\label{fig:figure3}
 \end{figure}
 
-Because of the inability to change parameters and adjust the model, it will be excluded from the comparison to the other techniques.
-The other algorithms used will be explained within the Methods section.
-
 \subsection{Hypothesis}
-Between the three animals, we expected to see Pandas being the most accurately predicted class since they are always Black and White, and have high contrast in fur.
+Between the three animals, we expected to see Pandas being the most accurately predicted class since they are always black and white, and have high contrast compared to the surroundings.
 This is especially true when compared to dogs and cats, which can come in a variety of colored fur.
 Furthermore, we expected the Neural Network Algorithms as well as the pre-trained algorithms to perform faster and more accurately than SVM.
