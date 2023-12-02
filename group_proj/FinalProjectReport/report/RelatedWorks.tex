@@ -25,7 +25,7 @@ This seemed to be a straightforward attempt to increase the amount of data that 
 
 \subsection{CLIP}
 As a last experimental algorithm, we also used a recently developed algorithm called Contrastive Language-Image Pre-training (CLIP) from OpenAI, the creators of prominent AI development technologies \cite{CLIP}.
-This algorithm is a pre-trained model on images that are encoded, as well as associated text that has also been encoded to match the image.
+This algorithm is a pre-trained model on images that are encoded, as well as associated text that has also been encoded to match the image (See: Figure \ref{fig:figure1} below).
 The advantage of using CLIP was to experiment by using a novel technique called Zero-Shot Prediction (ZSP).
 ZSP is the notion of encoding an image as well as a list of text that is the target feature, and having the pre-trained model perform a prediction based on no training from the desired dataset.
 Because of the inability to change parameters and adjust the model, it will be excluded from the comparison to the other techniques.
@@ -34,10 +34,10 @@ Because of the inability to change parameters and adjust the model, it will be e
 	\centering
 	\includegraphics[scale=0.5]{CLIP_structure}
 	\caption{CLIP model summary}
-	\label{fig:figure3}
+	\label{fig:figure1}
 \end{figure}
 
 \subsection{Hypothesis}
-Between the three animals, we expected to see Pandas being the most accurately predicted class since they are always black and white, and have high contrast compared to the surroundings.
+Between the three animals, we expected to see pandas being the most accurately predicted class since they are always black and white, and have high contrast compared to the surroundings.
 This is especially true when compared to dogs and cats, which can come in a variety of colored fur.
 Furthermore, we expected the Neural Network Algorithms as well as the pre-trained algorithms to perform faster and more accurately than SVM.

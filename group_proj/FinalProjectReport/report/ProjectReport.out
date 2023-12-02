@@ -15,9 +15,11 @@
 \BOOKMARK [2][-]{subsection.3.3}{ResNet50}{section.3}% 15
 \BOOKMARK [2][-]{subsection.3.4}{VGG16}{section.3}% 16
 \BOOKMARK [1][-]{section.4}{Evaluation}{}% 17
-\BOOKMARK [2][-]{subsection.4.1}{SVM}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.2}{CNN}{section.4}% 19
-\BOOKMARK [2][-]{subsection.4.3}{ResNet50}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.4}{VGG16}{section.4}% 21
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 22
-\BOOKMARK [1][-]{section.6}{Future Work}{}% 23
+\BOOKMARK [2][-]{subsection.4.1}{Confusion Matrix}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.2}{Performance Metrics}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.3}{SVM}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.4}{CNN}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.5}{ResNet50}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.6}{VGG16}{section.4}% 23
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 24
+\BOOKMARK [1][-]{section.6}{Future Work}{}% 25
