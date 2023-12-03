@@ -50,9 +50,9 @@ The summary of the structure of our CNN model is shown in Figure \ref{fig:figure
 %INSERT CITATION(s) SOMEWHERE IN THIS PARAGRAPH FOR THE INFO DISCUSSING DROPOUT/RELU
 %the citatino should be number 15
 Our convoluted layers use the Rectified Linear Unit (ReLu) activation function to introduce non-linearity, this way our model can learn complex relationships between the features of our data. 
-The ReLu activation function sets negative values found in the convolution matrix to 0, allowing the model to focus on the positive values that likely represent relevant features. 
+The ReLu activation function sets negative values found in the convolution matrix to 0, allowing the model to focus on the positive values that likely represent relevant features \cite{ReLu}. 
 In between the dense layers, we implemented dropout regularization to prevent overfitting. 
-Dropout works by temporarily setting the weights of a random set of neurons to 0 ("dropping out") per epoch. 
+Dropout works by temporarily setting the weights of a random set of neurons to 0 ("dropping out") per epoch \cite{Dropout}.
 This prevents overfitting by forcing the model to learn more robustly instead of relying too much on the recognition of certain features and "memorizing" the training data. 
 The output dense layer uses the Softmax activation function to scale the numerical output of the model into probabilities distributed over the possible output classes represented by indexes. 
 The class with the highest probability is considered the predicted class which is mapped to the string value of the class using the index value.
