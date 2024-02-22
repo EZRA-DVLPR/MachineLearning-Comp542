@@ -1,4 +1,4 @@
-# comp_542_proj
+# MachineLearning-Comp542
 
 A collection of assignments and the group project for my Machine Learning Class at CSUN Fall 2023
 
